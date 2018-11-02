@@ -25,6 +25,9 @@ export default class List extends Component {
           <Button title="react-native-fs" onPress={() => {
               navigation.navigate('Fs', {title: 'ReactNativeFs'})
           }}/>
+          <Button title="react-native-image-pickers" onPress={() => {
+              navigation.navigate('ReactNativeImagePicker', {title: 'ReactNativeImagePicker'})
+          }}/>
       </View>
     );
   }

@@ -13,7 +13,7 @@ import HomePage from './list'
 import Actionsheet from './list/actionsheet'
 import AntdMobile from './list/antdMobile'
 import Fs from './list/fs'
-
+import ReactNativeImagePicker from './list/reactNativeImagePicker'
 
 export const AppStackNavigator = StackNavigator({
 	  HomePage: {
@@ -27,6 +27,9 @@ export const AppStackNavigator = StackNavigator({
 	  },
 	  Fs: {
 	  	screen: Fs
+	  },
+	  ReactNativeImagePicker: {
+	  	screen: ReactNativeImagePicker
 	  }
 	},
 	{

@@ -1,6 +1,6 @@
 
 import react from "react";
-import {Platform,Alert, AlertIOS, PermissionsAndroid, CameraRoll} from 'react-native';
+import {Platform,Alert, AlertIOS, PermissionsAndroid, CameraRoll, Alert} from 'react-native';
 import RNFS from 'react-native-fs'
 import Permissions from 'react-native-permissions';
 import { Toast} from 'antd-mobile-rn';
@@ -15,59 +15,19 @@ export const checkPermissions = type => {
   };
 
   return new Promise((resolve,reject)=>{
-
+    debugger
     //安卓蓝牙不需要授权
     if(type=='bluetooth'&&Platform.OS=='android') resolve();
     //ios存储不需要授权
     if(type=='storage'&&Platform.OS=='ios') resolve();
-    //已授权
-    if(storage.permissions[type]=='authorized') resolve();
-    //未询问授权
-    if(storage.permissions[type]=='undetermined') {
-      Permissions
+    Permissions
         .request(type).then(res=>{
-          storage.permissions[type] = res;
           if(res=='authorized'||res=='undetermined') resolve();
           else reject('拒绝授权');
         }).catch(()=>{
           Alert.alert('授权失败', tip,[{text: '请重新授权'}]);
           reject('授权失败');
         })
-    }
-    //不支持或者已永久拒绝
-    if(storage.permissions[type]=='restricted') {
-      var tip = Platform.OS=='ios'?'设备不支持"'+mapName[type]+'"功能':'已永久拒绝使用"'+mapName[type]+'"权限';
-      Alert.alert('无权限', tip,[{text: '我知道了'}]);
-      reject(tip);
-    };
-    //拒绝授权
-    if(storage.permissions[type] == "denied" ){
-      if(Platform.OS=='ios'){
-        reject('"'+mapName[type]+'"拒绝授权');
-        Alert.alert('无权限', '同意授权"'+mapName[type]+'"权限，才能使用此功能', [
-          {
-            text: '否',
-            onPress: () => {
-
-            },
-            style: 'cancel'
-          },
-          {
-            text: '打开设置',
-            onPress: Permissions.openSettings
-          }
-        ])
-      }else {
-        Permissions
-        .request(type).then(res=>{
-          storage.permissions[type] = res;
-          if(res=='authorized') resolve();
-          else reject('拒绝授权');
-        }).catch(()=>{
-          reject('拒绝授权');
-        })
-      }
-    }
   });
 }
 
