@@ -1,11 +1,14 @@
 package com.rn_pack;
 
 import android.app.Application;
-
+import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
+import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import com.beefe.picker.PickerViewPackage;
 import com.rssignaturecapture.RSSignatureCapturePackage;
 import com.theweflex.react.WeChatPackage;
-import com.airbnb.android.react.lottie.LottiePackage;
 import com.rnfs.RNFSPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -28,10 +31,14 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
+            new ReactVideoPackage(),
+            new SplashScreenPackage(),
+            new PickerPackage(),
+            new PickerViewPackage(),
             new RSSignatureCapturePackage(),
             new WeChatPackage(),
-            new LottiePackage(),
               new RNFSPackage(),
+              new RNCameraPackage(),
               new ImagePickerPackage()
       );
     }

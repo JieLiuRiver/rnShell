@@ -3068,6 +3068,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+keymirror@0.1.1:
+  version "0.1.1"
+  resolved "http://registry.npm.taobao.org/keymirror/download/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/kind-of/download/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -4192,6 +4196,13 @@ react-native-camera-roll-picker@^1.2.1:
   version "1.2.3"
   resolved "http://registry.npm.taobao.org/react-native-camera-roll-picker/download/react-native-camera-roll-picker-1.2.3.tgz#b117fd3a2b9012dcccee1261a9bc427226b8d6d2"
 
+react-native-camera@^1.4.3:
+  version "1.4.3"
+  resolved "http://registry.npm.taobao.org/react-native-camera/download/react-native-camera-1.4.3.tgz#71359ae8efdf372fb1b8b5ec72ecae1c6708da4b"
+  dependencies:
+    lodash "^4.17.10"
+    prop-types "^15.6.2"
+
 react-native-collapsible@^0.9.0:
   version "0.9.0"
   resolved "http://registry.npm.taobao.org/react-native-collapsible/download/react-native-collapsible-0.9.0.tgz#207849faa15493820d19fa6a5e58f7c7b6c1b910"
@@ -4221,6 +4232,10 @@ react-native-fs@^2.12.0:
     base-64 "^0.1.0"
     utf8 "^2.1.1"
 
+react-native-image-crop-picker@^0.21.3:
+  version "0.21.3"
+  resolved "http://registry.npm.taobao.org/react-native-image-crop-picker/download/react-native-image-crop-picker-0.21.3.tgz#04457a3f2a888949f51be4a670dcf2520b9994f8"
+
 react-native-image-pan-zoom@^2.1.9:
   version "2.1.11"
   resolved "http://registry.npm.taobao.org/react-native-image-pan-zoom/download/react-native-image-pan-zoom-2.1.11.tgz#61bcb69219d95e76a9797d23e4a2e8e0bd654ae9"
@@ -4246,6 +4261,17 @@ react-native-menu@^0.23.0:
 react-native-permissions@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/react-native-permissions/download/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
+
+react-native-picker@^4.3.7:
+  version "4.3.7"
+  resolved "http://registry.npm.taobao.org/react-native-picker/download/react-native-picker-4.3.7.tgz#9842e8c62ff0d8b676e9514d9f9172413c0518a8"
+
+react-native-qrcode-scanner@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-1.1.0.tgz#6a2e88110e0c1def94690a4d52fc383634ed6e4c"
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-permissions "^1.1.1"
 
 react-native-refresh-list-view@^1.0.10:
   version "1.0.10"
@@ -4300,6 +4326,14 @@ react-native-tab-view@^1.0.0:
   resolved "http://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-1.2.0.tgz#0cc26a1c8e49b6c0d58a30363dbbe43954907c31"
   dependencies:
     prop-types "^15.6.1"
+
+react-native-video@^4.0.1:
+  version "4.0.1"
+  resolved "http://registry.npm.taobao.org/react-native-video/download/react-native-video-4.0.1.tgz#69fd9e8e3015c626cdfb9f659f971f77743038d1"
+  dependencies:
+    keymirror "0.1.1"
+    prop-types "^15.5.10"
+    shaka-player "2.4.4"
 
 react-native-wechat@^1.9.10:
   version "1.9.10"
@@ -4718,6 +4752,10 @@ rmc-tabs@~1.2.0:
     babel-runtime "6.x"
     rc-gesture "~0.0.18"
 
+rn-splash-screen@^5.2.0:
+  version "5.2.0"
+  resolved "http://registry.npm.taobao.org/rn-splash-screen/download/rn-splash-screen-5.2.0.tgz#1ce509e27d14d3dd0949427667fbc3d2a8dd853c"
+
 rn-topview@^0.1.6:
   version "0.1.6"
   resolved "http://registry.npm.taobao.org/rn-topview/download/rn-topview-0.1.6.tgz#b1b1216caf730f8547cd23c9b918ad0288454b11"
@@ -4866,6 +4904,10 @@ setimmediate@^1.0.5:
 setprototypeof@1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/setprototypeof/download/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
+
+shaka-player@2.4.4:
+  version "2.4.4"
+  resolved "http://registry.npm.taobao.org/shaka-player/download/shaka-player-2.4.4.tgz#bade8ff6b9a4bb649899d10cd4ffd05781dd79ab"
 
 shebang-command@^1.2.0:
   version "1.2.0"

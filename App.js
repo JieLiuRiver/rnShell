@@ -21,6 +21,9 @@ import ReactNativeWechat from './list/ReactNativeWechat'
 import SignatureCapture from './list/SignatureCapture'
 import ScrollableTabView from './list/ScrollableTabView'
 import Refreshlist from './list/Refreshlist'
+import QRCodeScanner from './list/QRCodeScanner'
+import ReactNativePicker from './list/ReactNativePicker'
+import ImageCropPicker from './list/ImageCropPicker'
 
 // import ReactNativeImageZoomViewer from './list/reactNativeImageZoomViewer'
 
@@ -60,6 +63,15 @@ export const AppStackNavigator = StackNavigator({
 		},
 		Refreshlist: {
 			screen: Refreshlist
+		},		
+		QRCodeScanner: {
+			screen: QRCodeScanner
+		},		
+		ReactNativePicker: {
+			screen: ReactNativePicker
+		},
+		ImageCropPicker: {
+			screen: ImageCropPicker
 		},
 		/*
 		ReactNativeImageZoomViewer: {
@@ -72,9 +84,13 @@ export const AppStackNavigator = StackNavigator({
 			const {navigation} = props;
 	        const {state, setParams} = navigation;
 	        const {params = {}} = state;
-			return {
-				title: params.title || '首页'
-			}
+	        if (!!params.title) {
+	        	return {
+					title: params.title || '首页'
+				}
+	        } else {
+	        	return null
+	        }
 		}
 	}
 )

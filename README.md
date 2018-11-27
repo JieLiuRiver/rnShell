@@ -47,3 +47,17 @@ defaultConfig {
 
 - react-native-parallax-scroll-view
 ![](https://raw.githubusercontent.com/i6mi6/react-native-parallax-scroll-view/master/demo.ios.0.17.2.gif)
+
+
+- android 报错 Invoke-customs are only supported starting with Android O (--min-api 26)
+
+```
+# android/build.gradle加上
+compileOptions {
+
+    sourceCompatibility JavaVersion.VERSION_1_8
+
+    targetCompatibility JavaVersion.VERSION_1_8
+
+}
+```

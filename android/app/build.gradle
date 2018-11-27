@@ -103,6 +103,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -114,6 +116,13 @@ android {
             universalApk false  // If true, also generate a universal APK
             include "armeabi-v7a", "x86"
         }
+    }
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
     }
     buildTypes {
         release {
@@ -137,9 +146,13 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-video')
+    compile project(':react-native-camera')
+    compile project(':rn-splash-screen')
+    compile project(':react-native-image-crop-picker')
+    compile project(':react-native-picker')
     compile project(':react-native-signature-capture')
     compile project(':react-native-wechat')
-    compile project(':lottie-react-native')
     compile project(':react-native-fs')
     compile project(':react-native-image-picker')
     implementation fileTree(dir: "libs", include: ["*.jar"])

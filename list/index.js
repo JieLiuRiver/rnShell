@@ -8,11 +8,32 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import SplashScreen from "rn-splash-screen";
 
 
 export default class List extends Component {
 
+  state = {
+    isLoading: true
+  }
+
+  componentDidMount() {
+
+    setTimeout(() => {
+      this.setState({isLoading: false});
+    }, 5000);
+  }
+
+  componentDidUpdate() {
+    if (!this.state.isLoading) {
+      // Hide splash screen
+      SplashScreen.hide();
+    }
+  }
+
+
   render() {
+    if (this.state.isLoading) return null;
     const {navigation} = this.props;
     return (
       <View style={styles.container}>
@@ -49,7 +70,15 @@ export default class List extends Component {
           <Button title="react-native-refresh-list-view" onPress={() => {
               navigation.navigate('Refreshlist', {title: 'Refreshlist'})
           }}/>
-
+          <Button title="qr-code-scanner" onPress={() => {
+              navigation.navigate('QRCodeScanner', {title: 'QRCodeScanner'})
+          }}/>
+          <Button title="react-native-picker" onPress={() => {
+              navigation.navigate('ReactNativePicker', {title: 'ReactNativePicker'})
+          }}/>
+          <Button title="react-native-image-crop-picker" onPress={() => {
+              navigation.navigate('ImageCropPicker', {title: 'ImageCropPicker'})
+          }}/>
       </View>
     );
   }
