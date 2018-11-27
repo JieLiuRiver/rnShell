@@ -12,22 +12,12 @@ export default class Fs extends Component {
   }
 
   download() {
-    debugger
-    console.log('xxxxx')
-    /*
-    checkPermissions('camera').then(()=>{
-      return checkPermissions('photo');
-    }).then(()=>{
-      return checkPermissions('storage');
-    }).then(()=>{
-      downloadFile(this.state.url, (rate) => {})
-        .then((res)=>{
-        })
-        .catch((error)=>{
-          Dialog.showToast({text: '保存失败', type: 'error'})
-        })
-    })
-    */
+    downloadFile(this.state.url, (rate) => {})
+      .then((res)=>{
+      })
+      .catch((error)=>{
+        Dialog.showToast({text: '保存失败', type: 'error'})
+      })
   }
 
   download2() {
@@ -38,7 +28,7 @@ export default class Fs extends Component {
     return (
       <View style={styles.container}>
         <Image style={{width: '100%', height: 200}} source={{uri: this.state.url}}/>
-        <Button title="download" onPress={() => this.download2.call(this)}/>
+        <Button title="download" onPress={() => this.download.call(this)}/>
       </View>
     );
   }

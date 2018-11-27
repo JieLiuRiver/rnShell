@@ -3,11 +3,15 @@ package com.rn_pack;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rssignaturecapture.RSSignatureCapturePackage;
+import com.theweflex.react.WeChatPackage;
+import com.airbnb.android.react.lottie.LottiePackage;
 import com.rnfs.RNFSPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.imagepicker.ImagePickerPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,8 +27,12 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new RNFSPackage()
+              new MainReactPackage(),
+            new RSSignatureCapturePackage(),
+            new WeChatPackage(),
+            new LottiePackage(),
+              new RNFSPackage(),
+              new ImagePickerPackage()
       );
     }
 

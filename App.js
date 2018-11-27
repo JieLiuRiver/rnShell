@@ -14,6 +14,15 @@ import Actionsheet from './list/actionsheet'
 import AntdMobile from './list/antdMobile'
 import Fs from './list/fs'
 import ReactNativeImagePicker from './list/reactNativeImagePicker'
+import ReactNativeSwiper from './list/ReactNativeSwiper'
+import PointerEvents from './list/PointerEvents'
+import ScrollView from './list/ScrollView'
+import ReactNativeWechat from './list/ReactNativeWechat'
+import SignatureCapture from './list/SignatureCapture'
+import ScrollableTabView from './list/ScrollableTabView'
+import Refreshlist from './list/Refreshlist'
+
+// import ReactNativeImageZoomViewer from './list/reactNativeImageZoomViewer'
 
 export const AppStackNavigator = StackNavigator({
 	  HomePage: {
@@ -30,7 +39,33 @@ export const AppStackNavigator = StackNavigator({
 	  },
 	  ReactNativeImagePicker: {
 	  	screen: ReactNativeImagePicker
-	  }
+	  },
+		ReactNativeSwiper: {
+			screen: ReactNativeSwiper
+		},
+		PointerEvents: {
+			screen: PointerEvents
+		},
+		ScrollView: {
+			screen: ScrollView
+		},
+		ReactNativeWechat: {
+			screen: ReactNativeWechat
+		},
+		SignatureCapture: {
+			screen: SignatureCapture
+		},		
+		ScrollableTabView: {
+			screen: ScrollableTabView
+		},
+		Refreshlist: {
+			screen: Refreshlist
+		},
+		/*
+		ReactNativeImageZoomViewer: {
+			screen: ReactNativeImageZoomViewer
+		}
+		*/
 	},
 	{
 		navigationOptions: (props) => {

@@ -1,6 +1,6 @@
 
 import react from "react";
-import {Platform,Alert, AlertIOS, PermissionsAndroid, CameraRoll, Alert} from 'react-native';
+import {Platform,Alert, AlertIOS, PermissionsAndroid, CameraRoll} from 'react-native';
 import RNFS from 'react-native-fs'
 import Permissions from 'react-native-permissions';
 import { Toast} from 'antd-mobile-rn';
@@ -15,7 +15,6 @@ export const checkPermissions = type => {
   };
 
   return new Promise((resolve,reject)=>{
-    debugger
     //安卓蓝牙不需要授权
     if(type=='bluetooth'&&Platform.OS=='android') resolve();
     //ios存储不需要授权
@@ -25,7 +24,7 @@ export const checkPermissions = type => {
           if(res=='authorized'||res=='undetermined') resolve();
           else reject('拒绝授权');
         }).catch(()=>{
-          Alert.alert('授权失败', tip,[{text: '请重新授权'}]);
+          // Alert.alert('授权失败', tip,[{text: '请重新授权'}]);
           reject('授权失败');
         })
   });
@@ -106,10 +105,12 @@ export const downloadFile = (uri, progressing = () => {}, tipFlag = true) => {
                     // 如果用户允许访问存储空间 - Android
                     requestExternalStoragePermission()
                       .then(pres => {
+                        console.log('bbbbbbbb')
                         saveVideoImageToPhoto(downloadDest)
                         resolve(res);
                       })
                       .catch(perr => {
+                        console.log('aaaaaaaaa')
                         tip('保存成功' + '\n' + 'file://' + downloadDest)
                         console.error('Failed to request permission ', perr);
                         resolve(res);
