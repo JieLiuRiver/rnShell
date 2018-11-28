@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {StackNavigator} from 'react-navigation'
+import {StackNavigator, createStackNavigator} from 'react-navigation'
 import HomePage from './list'
 import Actionsheet from './list/actionsheet'
 import AntdMobile from './list/antdMobile'
@@ -24,17 +24,21 @@ import Refreshlist from './list/Refreshlist'
 import QRCodeScanner from './list/QRCodeScanner'
 import ReactNativePicker from './list/ReactNativePicker'
 import ImageCropPicker from './list/ImageCropPicker'
+import ReactNativeImageZoomViewer from './list/reactNativeImageZoomViewer'
+import Animatable from './list/Animatable'
+import Progress from './list/Progress'
+import VectorIcons from './list/VectorIcons'
+import KeyboardAwareScrollView from './list/KeyboardAwareScrollView'
+import Flex from './list/Flex'
 
-// import ReactNativeImageZoomViewer from './list/reactNativeImageZoomViewer'
-
-export const AppStackNavigator = StackNavigator({
+export const AppStackNavigator = createStackNavigator({
 	  HomePage: {
 	      screen: HomePage
 	  },
 	  Actionsheet: {
 	      screen: Actionsheet
 	  },
-	  AntdMobile: {
+	  AntdMobileRn: {
 	    screen: AntdMobile
 	  },
 	  Fs: {
@@ -73,24 +77,33 @@ export const AppStackNavigator = StackNavigator({
 		ImageCropPicker: {
 			screen: ImageCropPicker
 		},
-		/*
 		ReactNativeImageZoomViewer: {
 			screen: ReactNativeImageZoomViewer
+		},
+		Animatable: {
+			screen: Animatable
+		},
+		Progress: {
+			screen: Progress
+		},
+		VectorIcons: {
+			screen: VectorIcons
+		},
+		KeyboardAwareScrollView: {
+			screen: KeyboardAwareScrollView
+		},
+		Flex: {
+			screen: Flex
 		}
-		*/
 	},
 	{
 		navigationOptions: (props) => {
 			const {navigation} = props;
 	        const {state, setParams} = navigation;
 	        const {params = {}} = state;
-	        if (!!params.title) {
-	        	return {
-					title: params.title || '首页'
-				}
-	        } else {
-	        	return null
-	        }
+	        return {
+				title: params.title || '首页'
+			}
 		}
 	}
 )

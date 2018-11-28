@@ -19,14 +19,22 @@ const images = [{
 }]
 
 export default class ReactNativeImageZoomViewer extends Component {
-
+  state = {
+    modalVisible: false
+  }
+  onPress() {
+    this.setState({
+      modalVisible: true
+    })
+  }
   render() {
+    const { modalVisible } = this.state
     return (
       <View style={styles.container}>
-        <Button title="press" onPress={() => this.ActionSheet.show()}/>
-        <Modal visible={true} transparent={true}>
-                {/*<ImageViewer imageUrls={images}/>*/}
-            </Modal>
+        <Button title="press" onPress={() => this.onPress.call(this)}/>
+        <Modal visible={modalVisible} transparent={true} onRequestClose={() => this.setState({ modalVisible: false })}>
+            <ImageViewer imageUrls={images} onClick={() => this.setState({ modalVisible: false })}/>
+        </Modal>
       </View>
     );
   }
