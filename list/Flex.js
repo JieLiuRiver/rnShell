@@ -41,7 +41,6 @@ const getFlexLayoutStyles = () => {
 export default class Flex extends Component {
   
   state = {
-    flexMap: getFlexLayoutStyles(),
     flexlist: Object.keys(getFlexLayoutStyles())
   }
 
@@ -107,16 +106,16 @@ export default class Flex extends Component {
 
 
         <View style={[styles.demoBox, styles.flex_row_start_center, {flexWrap: 'wrap'}]}>
-            <View style={[styles.demoItemA, styles.demo4Item]}><Text>67</Text></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
+            <View style={[styles.demoItemA]}><Text>67</Text></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
         </View>
 
         <View style={[styles.demoBox, styles.flex_row_start_center]}>
@@ -129,12 +128,12 @@ export default class Flex extends Component {
 
 
         <View style={[styles.demoBox, styles.flex_column_center_start, {height: 200, flexWrap: 'wrap'}]}>
-            <View style={[styles.demoItemA, styles.demo4Item]}><Text>69</Text></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
-            <View style={[styles.demoItemA, styles.demo4Item]}></View>
-            <View style={[styles.demoItemB, styles.demo4Item]}></View>
+            <View style={[styles.demoItemA]}><Text>69</Text></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
+            <View style={[styles.demoItemA]}></View>
+            <View style={[styles.demoItemB]}></View>
         </View>
 
         <View style={[styles.demoBox, styles.flex_column_center_center]}>
@@ -184,124 +183,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     backgroundColor: '#000'
-  },
-
-  demo1Box: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  demo1Item: {},
-
-  demo2Box: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  demo2Item: {},
-
-  demo3Box: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  demo3Item: {},
-
-  demo4Box: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  },
-  demo4Item: {},
-
-  demo5Box: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  demo5Item: {},
-
-  demo6Box: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  demo6Item: {},
-
-
-  demo7Box: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-end'
-  },
-  demo7Item: {},
-
-  demo8Box: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'stretch'
-  },
-  demo8Item: {
-    height: 'auto'
-  },
-
-  demo9Box: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center' 
-  },
-  demo9Item: {},
-
-  demo10Box: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center' 
-  },
-  demo10Item: {},
-
-
-  demo11Box: {
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'center' 
-  },
-  demo11Item: {},
-
-  demo12Box: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  },
-  demo12Item: {},
-
-  demo13Box: {
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'center' 
-  },
-  demo13Item: {},
-
-  demo14Box: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start' 
-  },
-  demo14Item: {},
-
-  demo15Box: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-end' 
-  },
-  demo15Item: {},
-
-  demo16Box: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch' 
-  },
-  demo16Item: {
-    width: 'auto'
   }
 
 });
