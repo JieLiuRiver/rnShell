@@ -10,7 +10,7 @@ export default class RNWechat extends Component {
   
   componentDidMount() {
     // 注册
-    WeChat.registerApp('wxa58c90052c34553e')
+    WeChat.registerApp('xxx')
     // 监听
     WeChat.addListener(
         'SendMessageToWX.Resp',
