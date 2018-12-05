@@ -90,6 +90,10 @@ export default class List extends Component {
       {
         routeName: 'KeyboardAwareScrollView',
         pagetitle: 'react-native-keyboard-aware-scroll-view'
+      },
+      {
+        routeName: 'DatePicker',
+        pagetitle: 'date-picker'
       }
     ]
   }

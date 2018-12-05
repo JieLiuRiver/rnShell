@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "antd-mobile-rn": "^2.3.0",
+    "moment": "^2.22.2",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "^0.57.5",
     "react-native-actionsheet": "^2.4.2",

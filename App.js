@@ -30,6 +30,7 @@ import Progress from './list/Progress'
 import VectorIcons from './list/VectorIcons'
 import KeyboardAwareScrollView from './list/KeyboardAwareScrollView'
 import Flex from './list/Flex'
+import DatePicker from './list/DatePicker'
 
 export const AppStackNavigator = createStackNavigator({
 	  HomePage: {
@@ -94,6 +95,9 @@ export const AppStackNavigator = createStackNavigator({
 		},
 		Flex: {
 			screen: Flex
+		},
+		DatePicker: {
+			screen: DatePicker
 		}
 	},
 	{

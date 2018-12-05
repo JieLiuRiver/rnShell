@@ -36,7 +36,7 @@ export default class AnimationCell extends PureComponent {
   };
 
   render() {
-    return (
+    return ( 
       <TouchableWithoutFeedback onPress={this.handlePress}>
         <View
           ref={this.handleRef}

@@ -7,7 +7,6 @@ const getFlexLayoutStyles = () => {
   /*
     flex_方向_主轴_侧轴
   */
-  // space-evenly flex容器起始边缘和第一个 flex 项之间的间距和每个相邻 flex 项之间的间距是相等
   const DIRECTIONS = ['row', 'column'],
         JUSTIFY_CONTENT_PROPVALUES = ['center', 'space-between', 'space-around', 'flex-start', 'flex-end', 'space-evenly'],
         JUSTIFY_CONTENT_NAMEVALUES = ['center', 'between', 'around', 'start', 'end', 'evenly'],
@@ -33,7 +32,6 @@ const getFlexLayoutStyles = () => {
       })
     })
   })
-  console.log('layoutStyles', layoutStyles)
   return layoutStyles
 }
 
