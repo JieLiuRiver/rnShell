@@ -31,27 +31,48 @@
 
 ##### 美团小程序 & 美团App
 
-<figure class="half">
-
-<img src="https://note.youdao.com/yws/api/personal/file/WEBa77e9d1d7df2e4b3b70a5954a27881df?method=download&shareKey=cfc56189e59febce9cb9c2119936fb75"  width="300" style="margin-right:60px"/>
-<img src="https://note.youdao.com/yws/api/personal/file/WEB16e8871be03585f238559225dca31ba0?method=download&shareKey=2caa36f8c6c23a4940a5f380fd76de1a" width="300"/>
-
-</figure>
+<table>
+      <tbody>
+        <tr>
+          <td align="center" valign="middle">
+            <a href="javascript:;" target="_blank">
+              <img width="300" src="https://note.youdao.com/yws/api/personal/file/WEBa77e9d1d7df2e4b3b70a5954a27881df?method=download&shareKey=cfc56189e59febce9cb9c2119936fb75">
+            </a>
+          </td>
+          <td align="center" valign="middle">
+            <a href="javascript:;" target="_blank">
+              <img width="300" src="https://note.youdao.com/yws/api/personal/file/WEB16e8871be03585f238559225dca31ba0?method=download&shareKey=2caa36f8c6c23a4940a5f380fd76de1a">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+</table>
 
 
 ### 我的DEMO效果
 
 ##### 小程序(原生) & IOS(RN) & Android(RN)
-
-<figure class="half">
-
-<img src="https://note.youdao.com/yws/api/personal/file/WEBb821672ff7014224dc8ea46e1d1020aa?method=download&shareKey=efe52b91558d33ca832f914bfe01b3ed" width="280" style="margin-right:20px">
-
-<img src="https://note.youdao.com/yws/api/personal/file/WEB8fffb5d454b1a29e6d942d92d9b8a2de?method=download&shareKey=d87ae6ab6484943ea894b05f39206a4d" width="280" style="margin-right:20px">
-
-<img src="https://note.youdao.com/yws/api/personal/file/WEB9d2f3e51aa3e94378008c2e505a9a6d9?method=download&shareKey=c881a82fc1b043ed4e4983da5e605e7e" width="280" />
-
-</figure>
+<table>
+      <tbody>
+        <tr>
+          <td align="center" valign="middle">
+            <a href="javascript:;" target="_blank">
+              <img width="300" src="https://note.youdao.com/yws/api/personal/file/WEBb821672ff7014224dc8ea46e1d1020aa?method=download&shareKey=efe52b91558d33ca832f914bfe01b3ed">
+            </a>
+          </td>
+          <td align="center" valign="middle">
+            <a href="javascript:;" target="_blank">
+              <img width="300" src="https://note.youdao.com/yws/api/personal/file/WEB8fffb5d454b1a29e6d942d92d9b8a2de?method=download&shareKey=d87ae6ab6484943ea894b05f39206a4d">
+            </a>
+          </td>
+          <td align="center" valign="middle">
+            <a href="javascript:;" target="_blank">
+              <img width="300" src="https://note.youdao.com/yws/api/personal/file/WEB9d2f3e51aa3e94378008c2e505a9a6d9?method=download&shareKey=c881a82fc1b043ed4e4983da5e605e7e">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+</table>
 
 
 ### 为啥写
