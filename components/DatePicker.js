@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   scrollView: {},
   contentScrollView: {width: DEVICE_WIDTH},
   panelView: {},
-  panelHeaderView: {paddingTop: 10, paddingBottom: 10, borderTopWidth: 1 / PixelRatio.get(), borderTopColor: BORDER_COLOR, borderBottomWidth: 1 / PixelRatio.get(), borderBottomColor: BORDER_COLOR},
+  panelHeaderView: {paddingTop: 10, paddingBottom: 10, borderTopWidth: 1 / PixelRatio.get(), borderTopColor: BORDER_COLOR, borderBottomWidth: 1 / PixelRatio.get(), borderBottomColor: BORDER_COLOR, backgroundColor: '#fff'},
   panelDaysView: {flexWrap: 'wrap', width: DEVICE_WIDTH},
   panelDaysItemView: {width: parseInt((DEVICE_WIDTH / 7)), height: 50, borderBottomWidth: 1 / PixelRatio.get(), borderBottomColor: BORDER_COLOR, position: 'relative'},
   panelItemMask: {position: 'absolute', width: '100%', height: '100%', backgroundColor: '#fff', borderBottomWidth: 1 / PixelRatio.get(), borderBottomColor: BORDER_COLOR},
@@ -226,7 +226,6 @@ export default class DatePicker extends Component{
       this.setState({
         availableMonths
       }, () => {
-      	console.log('availableMonths', this.state.availableMonths)
       	cb()
       })
     }
@@ -394,7 +393,6 @@ export default class DatePicker extends Component{
 
   onSubmitAction() {
     this.onPressContainer()
-    console.log('ssssss')
     this.props.onConfirmSelected && this.props.onConfirmSelected(this.currentSelectedValues, this)
   }
 
@@ -436,42 +434,43 @@ export default class DatePicker extends Component{
 		)
 	}
 
-	renderPanelItemView({ item, index, section }) {
+	renderPanelItemView(e) {
+    const { item, index, section } = e
 		const { availableMonths, hasLeaveDate } = this.state
 		const panels = []
-		availableMonths.map((o, i) => {
-			const { year, month } = o.viewTime
-			panels.push(
-				<View style={[styles.panelView]} key={i}>
-					<View style={[styles.flex_row_start_center, styles.panelDaysView]}>
-						{
-							!!o.days.length && o.days.map((dItem, dIdx) => (
-								<TouchableOpacity activeOpacity={(!dItem.visible || dItem.disabled) ? 1 : 0.5} onPress={this.onPressDay.bind(this, i, dIdx, dItem)} style={[styles.flex_column_center_center, styles.panelDaysItemView, (!!dItem.selected && !!dItem.visible) && {backgroundColor: THEME_COLOR}, (!!dItem.selected && dItem.selected.type == 'enter') && styles.startCell, (!!dItem.selected && dItem.selected.type == 'leave') && styles.endCell, (!!dItem.selected && dItem.selected.type == 'contain') && styles.containCell, (dIdx + 1)%7 == 0 && {width: DEVICE_WIDTH / 7 + 2.5}]} key={dIdx}>
-									<Text style={[{fontSize: 14}, (!!dItem.selected && !!dItem.visible) && {color: '#fff'}, (!!dItem.selected && dItem.selected.type == 'contain') && {color: '#000'}, dItem.disabled && {color: '#ccc'}]}>{ dItem.day }</Text>
-									{ (!!dItem.selected && dItem.selected.type !== 'contain') && (<Text style={[{fontSize: 10}, (!!dItem.selected && !!dItem.visible) && {color: '#fff'}]}>{ dItem.selected.label }</Text>)}
-									{!dItem.visible && (<View style={styles.panelItemMask}></View>)}
-                  {(!!dItem.selected && !hasLeaveDate && dItem.selected.type === 'enter') && (<View style={[styles.tipStyles, styles.flex_row_center_center]}><Text style={{color: '#fff', fontSize: 10}}>请选择离店日期</Text><View style={styles.arrowStyles}></View></View>)}
-                  {(!!dItem.selected && !!hasLeaveDate && dItem.selected.type === 'leave') && (<View style={[styles.tipStyles, styles.flex_row_center_center, styles.nightCountView]}><Text style={{color: '#fff', fontSize: 10}}>共{ hasLeaveDate }晚</Text><View style={[styles.arrowStyles, {left: 25}]}></View></View>)}
-								</TouchableOpacity>
-							))
-						}
-					</View>
-          {i !== availableMonths.length -1 && <View style={styles.blankView}></View>}
+    const { year, month } = section.viewTime
+		panels.push(
+			<View style={[styles.panelView]}>
+				<View style={[styles.flex_row_start_center, styles.panelDaysView]}>
+					{
+						!!item.length && item.map((dItem, dIdx) => (
+							<TouchableOpacity activeOpacity={(!dItem.visible || dItem.disabled) ? 1 : 0.5} onPress={this.onPressDay.bind(this, section.panelIdx, dIdx, dItem)} style={[styles.flex_column_center_center, styles.panelDaysItemView, (!!dItem.selected && !!dItem.visible) && {backgroundColor: THEME_COLOR}, (!!dItem.selected && dItem.selected.type == 'enter') && styles.startCell, (!!dItem.selected && dItem.selected.type == 'leave') && styles.endCell, (!!dItem.selected && dItem.selected.type == 'contain') && styles.containCell, (dIdx + 1)%7 == 0 && {width: DEVICE_WIDTH / 7 + 2.5}]} key={dIdx}>
+								<Text style={[{fontSize: 14}, (!!dItem.selected && !!dItem.visible) && {color: '#fff'}, (!!dItem.selected && dItem.selected.type == 'contain') && {color: '#000'}, dItem.disabled && {color: '#ccc'}]}>{ dItem.day }</Text>
+								{ (!!dItem.selected && dItem.selected.type !== 'contain') && (<Text style={[{fontSize: 10, marginTop: 2}, (!!dItem.selected && !!dItem.visible) && {color: '#fff'}]}>{ dItem.selected.label }</Text>)}
+								{!dItem.visible && (<View style={styles.panelItemMask}></View>)}
+                {(!!dItem.selected && !hasLeaveDate && dItem.selected.type === 'enter') && (<View style={[styles.tipStyles, styles.flex_row_center_center]}><Text style={{color: '#fff', fontSize: 10}}>请选择离店日期</Text><View style={styles.arrowStyles}></View></View>)}
+                {(!!dItem.selected && !!hasLeaveDate && dItem.selected.type === 'leave') && (<View style={[styles.tipStyles, styles.flex_row_center_center, styles.nightCountView]}><Text style={{color: '#fff', fontSize: 10}}>共{ hasLeaveDate }晚</Text><View style={[styles.arrowStyles, {left: 25}]}></View></View>)}
+							</TouchableOpacity>
+						))
+					}
 				</View>
-			) 
-		})
+        {section.panelIdx != availableMonths.length -1 && (<View style={styles.blankView}></View>)}
+			</View>
+		)
 		return (
 			<View style={{flex: 1}}>
-				{panels}
+        {panels}
 			</View>
 		)
 	}
 
 	renderContentView() {
     const { availableMonths, hasLeaveDate } = this.state
-    availableMonths.map(item => {
-      item.title = item.viewTime.year + '年' + ' ' + (item.viewTime.month < 10 ? '0' + item.viewTime.month : item.viewTime.month) + '月'
-      item.data= item.days
+    availableMonths.map((item, index) => {
+      const { year, month } = item.viewTime
+      item.title = year + '年' + ' ' + (month < 10 ? '0' + month : month) + '月'
+      item.data= [item.days]
+      item.panelIdx = index
     })
 		return (
       <SectionList
@@ -491,7 +490,6 @@ export default class DatePicker extends Component{
 	render () {
 		const {visibleStatus} = this.state
 		if (!visibleStatus) return null
-		console.log('--------- availableMonths：', this.state.availableMonths)
 		return (
       <View style={styles.container}>
         <TouchableOpacity activeOpacity={1} style={[styles.shadowArea]} onPress={this.onPressContainer.bind(this)}></TouchableOpacity>
@@ -509,24 +507,3 @@ export default class DatePicker extends Component{
 		)
 	}
 }
-
-
-/*
-
-<ScrollView
-  showsVerticalScrollIndicator={false}
-  alwaysBounceVertical={true}
-  style={styles.scrollView}
-  contentContainerStyle={styles.contentScrollView}>
-    {
-      this.renderPanelItemView()
-    }
-</ScrollView>
-
-
-
-          <View style={[styles.flex_row_center_center, styles.panelHeaderView]}>
-            <Text>{ year + '年' + ' ' + (month < 10 ? '0' + month : month) + '月' }</Text>
-          </View>
-*/
-
