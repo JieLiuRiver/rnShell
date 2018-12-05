@@ -440,7 +440,7 @@ export default class DatePicker extends Component{
 		const panels = []
     const { year, month } = section.viewTime
 		panels.push(
-			<View style={[styles.panelView]}>
+			<View style={[styles.panelView]} key={section.panelIdx}>
 				<View style={[styles.flex_row_start_center, styles.panelDaysView]}>
 					{
 						!!item.length && item.map((dItem, dIdx) => (
