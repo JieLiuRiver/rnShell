@@ -7,10 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button, TouchableOpacity, Alert, TouchableHighlight, ScrollView} from 'react-native';
-// import SplashScreen from "rn-splash-screen";
+import {Platform, StyleSheet, Text, View, Button, TouchableOpacity, Alert, TouchableHighlight, ScrollView, BackHandler, ToastAndroid} from 'react-native';
 
-
+var lastBackTime = ""
 export default class List extends Component {
 
   state = {
@@ -35,7 +34,7 @@ export default class List extends Component {
         routeName: 'ReactNativeImagePicker',
         pagetitle: 'react-native-image-pickers'
       },
-      {
+      { 
         routeName: 'ReactNativeImageZoomViewer',
         pagetitle: 'react-native-image-zoom-viewer'
       },
@@ -94,8 +93,60 @@ export default class List extends Component {
       {
         routeName: 'DatePicker',
         pagetitle: 'date-picker'
+      },
+      {
+        routeName: 'FontFamily',
+        pagetitle: 'font-family'
+      },
+      {
+        routeName: 'SwipeableFlatList',
+        pagetitle: 'swipeable-flatList'
+      },
+      {
+        routeName: 'SectionList',
+        pagetitle: 'section-list'
+      },
+      {
+        routeName: 'AndroidBack',
+        pagetitle: 'android-back'
+      },
+      {
+        routeName: 'ReactNativeUiLib',
+        pagetitle: 'mine-react-native-ui-lib'
+      },
+      {
+        routeName: 'ReactAutobind',
+        pagetitle: 'react-autobind'
+      },
+      {
+        routeName: 'NativeEcharts',
+        pagetitle: 'native-echarts'
+      },
+      {
+        routeName: 'HomePage2',
+        pagetitle: 'GitHubPopular'
       }
     ]
+  }
+
+  componentWillMount(){
+    if (Platform.OS === 'android') {
+      BackHandler.addEventListener('hardwareBackPress', () => {
+          if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+              BackHandler.exitApp();//直接退出APP
+          }else{
+              this.lastBackPressed = Date.now();
+              ToastAndroid.show('再按一次退出应用', 1000);//提示
+              return true;
+          }
+      })
+    }
+  }
+
+  componentWillUnmount(){
+      if (Platform.OS === 'android') {
+          BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+      }
   }
 
   onPressWork(o, i) {

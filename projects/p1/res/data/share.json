@@ -1,0 +1,20 @@
+{
+  "share_app": {
+    "title": "分享GitHub Popular",
+    "content": "GitHub最受欢迎的开源项目浏览神器",
+    "imgUrl": "http://www.devio.org/io/GitHubPopular/img/ic_app.png",
+    "url":"http://www.devio.org/io/GitHubPopular/"
+  },
+  "share_blog": {
+    "title": "分享贾鹏辉的技术博客",
+    "content": "关于移动端技术 | Android&iOS Development Manager | 这里是 CrazyCodeBoy@贾鹏辉 的个人博客,分享技术干货。",
+    "imgUrl": "http://www.devio.org/io/GitHubPopular/img/ic_app_120.png",
+    "url":"http://www.devio.org/"
+  },
+  "share_repo": {
+    "title": "来自GitHub Popular的分享",
+    "content": "我在GitHub Popular发现开源项目",
+    "imgUrl": "http://www.devio.org/io/GitHubPopular/img/ic_app_120.png",
+    "url":"http://www.devio.org/io/GitHubPopular/"
+  }
+}

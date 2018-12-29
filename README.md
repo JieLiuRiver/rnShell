@@ -292,3 +292,37 @@ compileOptions {
 
 }
 ```
+
+# bundle 打包
+```
+开发React Native的过程成,js代码和图片资源运行在一个Debug Server上
+当我们需要发布App到App Store的时候就需要打包,使用离线的js代码和图片。这就需要把JavaScript和图片等资源打包成离线资源，在添加到Xcode中，然后一起发布到App Strore中。
+打包离线资源需要使用命令react-native bundle
+
+其中我们常使用的一线命令选项：
+
+  --entry-file ,ios或者android入口的js名称，比如index.ios.js
+
+  --platform ,平台名称(ios或者android)
+
+  --dev ,设置为false的时候将会对JavaScript代码进行优化处理。
+
+  --bundle-output, 生成的jsbundle文件的名称，比如./ios/bundle/index.ios.jsbundle
+
+  --assets-dest 图片以及其他资源存放的目录,比如./ios/bundle
+
+react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle
+```
+
+# IOS TextInput 录入中文 https://github.com/facebook/react-native/pull/18456/files#diff-8eb50d68d87e28556c034717cd58a86e
+
+
+# 发布
+
+```
+pushy uploadIpa <your-package.ipa>
+
+pushy uploadApk android/app/build/outputs/apk/app-release.apk
+
+pushy bundle --platform <ios|android>
+```
